@@ -19,13 +19,16 @@
 
     </div>
 
-    <div th:replace="fragments/top_menu">
 
-    </div>
-
-    <h1>Welcome To The Item Database!</h1>
+    <div class="jumbotron">
+        <h1 class="display-4">Welcome To The Item Database!</h1>
+        <p class="lead">This Database is directly Connected to GearHost</p>
+        <hr class="my-4">
+        <p>By being directly connected to GearHost, it will update the database straight away!</p>
 
     <h2>Avaliable Items: </h2>
+
+
     <p th:each="item :${items}">
         <span th:text="${item.name}"/>
         <span th:text="${item.price}"/>
@@ -33,7 +36,10 @@
         <a style="color: green;" th:href="@{'/update/' + ${item.id}}">update</a>
 
     </p>
+        <div th:replace="fragments/top_menu">
 
+        </div>
+    </div>
 </div>
 
 <!-- Optional JavaScript -->
