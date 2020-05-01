@@ -38,12 +38,6 @@ public class MainController {
     @GetMapping("/delete/{id}")
     public String delete(@PathVariable("id") int id){
         itemService.deleteItem(id);
-        return "shop";
-    }
-
-    @PostMapping("/delete")
-    public String deleteNow(@ModelAttribute Item item){
-        itemService.updateItem(item);
         return "redirect:/shop";
     }
 
