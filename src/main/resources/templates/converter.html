@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="../main.css">
+
+    <title>Converter</title>
+</head>
+<body>
+
+<div class="container">
+
+
+    <div th:replace="fragments/Menu">
+
+    </div>
+
+<meta charset="UTF-8">
+<title>Converters</title>
+
+<h1>Here you can convert different types of data values</h1>
+
+<!-- BINARY TIL DECIMAL -->
+<h2>Binary to Deicmal Converter</h2>
+
+<!-- Form/Text Field-->
+<form id="binaryNumber">
+    Enter Binary Number: <input type="number" input name="inputTypeName"><br>
+</form>
+
+<!-- Button -->
+<button onclick="myFunction1()">Convert to Decimal</button>
+
+<p id="demo"></p>
+
+<!-- Script -->
+<script type="text/javascript">
+    //Med lidt hjælp fra diverse hjemmesider har jeg selv fået lavet mig følgende binary til decimal converter
+    function myFunction1() {
+        var form = new FormData(document.getElementById("binaryNumber"));
+        var inputName = form.get("inputTypeName");
+        var text = "";
+        var binarynumber = parseInt(inputName);
+        var decimal = parseInt(binarynumber, 2);
+        text = "Your binary number is = " + decimal + " in decimal";
+        document.getElementById("demo").innerHTML = text;
+    }
+</script>
+
+<!-- Her ned efter er samme format som oven over mht. kode opsætning -->
+
+
+<!-- DECIMAL TIL BINARY -->
+<h2>Decimal to Binary Converter</h2>
+
+<form id="decimalNumber">
+    Enter Decimal Number: <input type="number" input name="inputTypeName"><br>
+</form>
+
+<button onclick="myFunction2()">Convert to Binary</button>
+
+<p id="demo1"></p>
+
+<script type="text/javascript">
+    function myFunction2() {
+        var form = new FormData(document.getElementById("decimalNumber"));
+        var inputName = form.get("inputTypeName");
+        var text = "";
+        var decimalnumber = parseInt(inputName);
+        var decimal = parseInt((decimalnumber >>> 0).toString(2));
+        text = "Your decimal number is = " + decimal + " in binary";
+        document.getElementById("demo1").innerHTML = text;
+    }
+</script>
+
+
+<!-- HEXIDECIMAL TIL DECIMAL -->
+<h2>Hexidecimal to Decimal</h2>
+
+<form id="hexNumber">
+    Enter Hexidecimal Number: <input type="number" input name="inputTypeName"><br>
+</form>
+
+<button onclick="myFunction3()">Convert to Decimal</button>
+
+<p id="demo2"></p>
+
+<script type="text/javascript">
+    function myFunction3() {
+        var form = new FormData(document.getElementById("hexNumber"));
+        var inputName = form.get("inputTypeName");
+        var text = "";
+        var hexString = parseInt(inputName);
+        var decimal = parseInt(hexString, 16);;
+        text = "Your Hexidecimal number is = " + decimal + " in decimal";
+        document.getElementById("demo2").innerHTML = text;
+    }
+</script>
+
+
+<!-- DECIMAL TIL HEXIDECIMAL -->
+<h2>Decimal to Hexidecimal</h2>
+
+<form id="deciNumber">
+    Enter Decimal Number: <input type="number" input name="inputTypeName"><br>
+</form>
+
+<button onclick="myFunction4()">Convert to Hexidecimal</button>
+
+
+<p id="demo3"></p>
+<script type="text/javascript">
+    function myFunction4() {
+        var form = new FormData(document.getElementById("deciNumber"));
+        var inputName = form.get("inputTypeName");
+        var text = "";
+        var hexString = parseInt(inputName);
+        var decimal = hexString.toString(16);
+        text = "Your Hexidecimal number is = " + decimal + " in decimal";
+        document.getElementById("demo3").innerHTML = text;
+    }
+</script>
+</div>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+</html>
