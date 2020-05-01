@@ -71,4 +71,10 @@ public class MainController {
         return "converter";
     }
 
+    @GetMapping("/blog")
+    public String blog(){
+
+        return "blog";
+    }
+
 }
