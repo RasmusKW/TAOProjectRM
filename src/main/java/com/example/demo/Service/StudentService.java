@@ -1,39 +1,42 @@
+/*
 package com.example.demo.Service;
 
-import com.example.demo.Model.Item;
-import com.example.demo.Repository.ItemRepo;
+import com.example.demo.Model.Student;
 import com.example.demo.Repository.ItemRepoJPA;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+///import com.example.demo.Repository.ItemRepo;
+
 @Service
-public class ItemService {
+public class StudentService {
 
     @Autowired
     ItemRepoJPA itemRepo;
 
-    public List<Item> fetchAllItems(){
+    public List<Student> fetchAllStudents(){
         return itemRepo.findAll();
 
     }
 
-    public void addItem(Item i){
+    public void addStudent(Student i){
         itemRepo.save(i);
     }
 
-    public void deleteItem(int id){
+    public void deleteStudent(int id){
         itemRepo.deleteById(id);
     }
 
-    public Item findItemById(int id){
+    public Student findStudentById(int id){
         return itemRepo.getOne(id);
 
     }
 
-    public void updateItem(Item i){
+    public void updateStudent(Student i){
         itemRepo.save(i);
     }
 
 }
+*/

@@ -3,10 +3,20 @@ h1 {
 }
 
 span {
-    color: blue;
-    font-weight: bold;
+    color: black;
+    font-weight: normal;
 }
+
 
 h2 {
     color: darkred;
+}
+
+h7 {
+    color: black;
+}
+
+p {
+    color: black;
+    font-weight: normal;
 }

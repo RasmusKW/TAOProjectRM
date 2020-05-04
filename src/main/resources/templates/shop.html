@@ -27,15 +27,50 @@
         <p>By being directly connected to GearHost, it will update the database straight away!</p>
 
     <h2>Avaliable Items: </h2>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm p-3 mb-2 bg-light text-black">
+                   <h7>Fornavn</h7>
+                </div>
+                <div class="col-sm col-sm p-3 mb-2 bg-light text-black">
+                   <h7>Efternavn</h7>
+                </div>
+                <div class="col-sm col-sm p-3 mb-2 bg-light text-black">
+                    <h7>Update</h7>
+                </div>
+                <div class="col-sm col-sm p-3 mb-2 bg-light text-black">
+                   <h7>Delete</h7>
+                </div>
+            </div>
+        </div>
 
 
-    <p th:each="item :${items}">
-        <span th:text="${item.name}"/>
-        <span th:text="${item.price}"/>
-        <a style="color: red;" th:href="@{'/delete/' + ${item.id}}">delete</a>
-        <a style="color: green;" th:href="@{'/update/' + ${item.id}}">update</a>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm p-3 mb-2 bg-light text-white">
+                    <p th:each="student :${students}">
+                    <span style="color: black" th:text="${student.fornavn}"/>
+                    </p>
+                </div>
+                <div class="col-sm col-sm p-3 mb-2 bg-light text-white">
+                    <p th:each="student :${students}">
+                    <span style="color: black" th:text="${student.efternavn}"/>
+                    </p>
+                </div>
+                <div class="col-sm col-sm p-3 mb-2 bg-light text-white">
+                    <p th:each="student :${students}">
+                    <a style="color: lightcoral;" th:href="@{'/delete/' + ${student.id}}">Delete</a>
+                    </p>
+                </div>
+                <div class="col-sm col-sm p-3 mb-2 bg-light text-white">
+                    <p th:each="student :${students}">
+                    <a style="color: black;" th:href="@{'/update/' + ${student.id}}">Update</a>
+                    </p>
+                </div>
+            </div>
+        </div>
 
-    </p>
+
         <div th:replace="fragments/top_menu">
 
         </div>
